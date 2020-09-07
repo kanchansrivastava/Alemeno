@@ -18,27 +18,45 @@ export class MainFeedingComponent implements OnInit {
   fourthFormGroup: FormGroup;
   fifthFormGroup: FormGroup;
 
-  url ="";
-  constructor(private _formBuilder: FormBuilder) { }
+
+
+  constructor(private _formBuilder: FormBuilder) {
+  }
+  
+  imagePreview: string;
+  selecetdFile : File;
 
   onFileSelected(event) {
-    console.log(event);
+    this.selecetdFile = event.target.files[0];
+    console.log(this.selecetdFile);
+    
+    const reader = new FileReader();
+    
+    reader.onload = () => {
+      this.imagePreview = reader.result;
+    };
+    reader.readAsDataURL(this.selecetdFile);
+
+
   }
+
+
+  
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
       // firstCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      // secondCtrl: ['', Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required]
+      // thirdCtrl: ['', Validators.required]
     });
     this.fourthFormGroup = this._formBuilder.group({
-      fourthCtrl: ['', Validators.required]
+      // fourthCtrl: ['', Validators.required]
     });
     this.fifthFormGroup = this._formBuilder.group({
-      fifthCtrl: ['', Validators.required]
+      // fifthCtrl: ['', Validators.required]
     });
   }
 

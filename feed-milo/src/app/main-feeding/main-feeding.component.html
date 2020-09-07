@@ -1,90 +1,89 @@
 <section id="main-sec">
     <div>
         <h1>Feed milo</h1>
+
+
+
     </div>
     <mat-horizontal-stepper #stepper>
         
         <!-- Step 1 -->
-        <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+        <mat-step [stepControl]="firstFormGroup" >
           <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Fill out your name</ng-template>
-            <!-- <mat-form-field>
-              <mat-label>Name</mat-label>
-              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-            </mat-form-field> -->
+            <div class="cont">
             <div>
               <button mat-button matStepperNext> Feed Milo </button>
             </div>
+          </div>
           </form>
+
         </mat-step>
         
         <!-- Step 2 -->
         <mat-step [stepControl]="secondFormGroup" errorMessage=" Image is required ">
           <form [formGroup]="secondFormGroup">
-            <ng-template matStepLabel>Fill out your address</ng-template>
+            <div class="cont">
             <h1> Click a picture of your meal . </h1>
-            
             <input type="file" (change)="onFileSelected($event)" formControlName="secondCtrl" #imageUpload  style="display: none;" >
-            <button (click)="imageUpload.click()" name="file" >
-              Click 
-            </button>
-            
-            <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+
+            <!-- container of image and button to upload -->
+            <div class="food-img">
+              <img [src]="imagePreview" alt=" ">
             </div>
+              <button (click)="imageUpload.click()" name="file" id="up_button" >
+                <mat-icon>add_a_photo</mat-icon> 
+              </button>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>  
+            </div>
+            
           </form>
         </mat-step>
     
         <!-- Step 3 -->
-        <mat-step [stepControl]="thirdFormGroup" errorMessage="Address is required.">
+        <mat-step [stepControl]="thirdFormGroup" >
           <form [formGroup]="secondFormGroup">
-            <ng-template matStepLabel>Fill out your address</ng-template>
-            <mat-form-field>
-              <mat-label>Address</mat-label>
-              <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
-                     required>
-            </mat-form-field>
-            <div>
-              <p>Go to a different step to see the error state</p>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+            <div class="cont">
+              <div class="food-img">
+                <img [src]="imagePreview" alt=" ">
+              </div>
+              <div class="cont">
+                <button mat-button matStepperNext>Share with Milo</button>
+                <button mat-button matStepperPrevious>Take again</button>
+              </div>
             </div>
           </form>
         </mat-step>
     
         <!-- Step 4 -->
-        <mat-step [stepControl]="fourthFormGroup" errorMessage="Address is required.">
+        <mat-step [stepControl]="fourthFormGroup">
           <form [formGroup]="secondFormGroup">
-            <ng-template matStepLabel>Fill out your address</ng-template>
-            <mat-form-field>
-              <mat-label>Address</mat-label>
-              <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
-                     required>
-            </mat-form-field>
-            <div>
-              <p>Go to a different step to see the error state</p>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+            <div class="cont">
+
+              <div class="food-img">
+                <img [src]="imagePreview" alt=" ">
+              </div>
+                            
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
             </div>
           </form>
         </mat-step>
     
         <!-- Step 5 -->
-        <mat-step [stepControl]="fifthFormGroup" errorMessage="Address is required.">
+        <mat-step [stepControl]="fifthFormGroup">
           <form [formGroup]="secondFormGroup">
-            <ng-template matStepLabel>Fill out your address</ng-template>
-            <mat-form-field>
-              <mat-label>Address</mat-label>
-              <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
-                     required>
-            </mat-form-field>
-            <div>
-              <p>Go to a different step to see the error state</p>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+            <div class="cont">
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
             </div>
-          </form>
+            </form>
         </mat-step>
     
       
