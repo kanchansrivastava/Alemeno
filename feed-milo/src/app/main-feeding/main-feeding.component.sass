@@ -8,15 +8,24 @@
     color: white
 
 #bg-img
+    text-align: center
 
 
 #stepper
-    right: 0
-    position: absolute
+    // right: 0
+    height: 100%
+    min-height: 100vh
+    width: 100%
+    border: 1px solid white
+    position: relative
     display: flex
     justify-content: center
-    align-items: center
+    align-items: flex-end
     background-color: rgba(0, 0, 0, 0)
+
+    button
+        border-radius: 100px
+        margin: 10px
 
 .cont
     display: flex
@@ -27,26 +36,34 @@
     div
         margin: 1em
 
+#feed-btn
+    width: 300px
+    height: 50px
+    border-radius: 50px
+    
+
 #up_button
-    width: 100px
-    height: 100px
-    background-color: white
+    width: 50px
+    height:50px
+    border: none
     border-radius: 50%
     outline: none
-
+    color: white
+    background-color: red
 
 .food-img
-    width: 250px
-    height:250px
+    width: 200px
+    height:200px
     overflow: hidden
     border: none 
     max-width: 80%
     border-radius: 50%
+    object-fit: cover
 
     img[src]
        display: block
-        width: 100%
-        height: 100%
+        // width: 100%
+        // height: 100%
         border: none
         object-fit: cover 
 
@@ -54,4 +71,13 @@
         width: 100%
         height: 100%
         border: none
-        object-fit: cover
+
+.fourth
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+    .food-img
+        position: absolute

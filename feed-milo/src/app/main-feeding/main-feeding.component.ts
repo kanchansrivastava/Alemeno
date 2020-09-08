@@ -23,10 +23,12 @@ import {
       state('closed', style({
       })),
       state('open', style({
-        transform: 'translateX(-100px)',
+        width: '89px',
+        height:'23px' ,
+        transform: 'translateY(80px)',
       })),
-      transition('* >', [
-        animate('.25s')
+      transition('open => closed', [
+        animate('5s')
       ]),
     ]),
   ],
@@ -64,17 +66,14 @@ export class MainFeedingComponent implements OnInit {
   }
 
   isOpen = false;
-  togglertext = "menu"
-
-    share() {
-      this.isOpen = !this.isOpen;
-    }
+  share() {
+    this.isOpen = !this.isOpen;
+  }
 
   
   ngOnInit(): void {
-
     
-
+    
     this.firstFormGroup = this._formBuilder.group({
       // firstCtrl: ['', Validators.required]
     });
@@ -85,7 +84,8 @@ export class MainFeedingComponent implements OnInit {
       // thirdCtrl: ['', Validators.required]
     });
     this.fourthFormGroup = this._formBuilder.group({
-      // fourthCtrl: ['', Validators.required]
+      // fourthCtrl: ['', Validators.required]      
+
     });
     this.fifthFormGroup = this._formBuilder.group({
       // fifthCtrl: ['', Validators.required]
