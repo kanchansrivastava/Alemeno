@@ -73,7 +73,7 @@ export class MainFeedingComponent implements OnInit {
   
   ngOnInit(): void {
     
-    
+    this.share();
     this.firstFormGroup = this._formBuilder.group({
       // firstCtrl: ['', Validators.required]
     });
