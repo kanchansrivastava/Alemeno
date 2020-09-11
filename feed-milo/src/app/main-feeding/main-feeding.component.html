@@ -173,7 +173,7 @@
         <mat-step [stepControl]="secondFormGroup" class="sec">
             <div class="cont">
             <h1> Click a picture of your meal . </h1>
-            <input type="file" (change)="onFileSelected($event)" formControlName="secondCtrl" #imageUpload  style="display: none;" >
+            <input type="file" (change)="onFileSelected($event)" capture="camera" accept="image/*" formControlName="secondCtrl" #imageUpload  style="display: none;" >
 
             <!-- container of image and button to upload -->
             <div class="food-img">
